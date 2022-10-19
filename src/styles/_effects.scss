@@ -1,0 +1,15 @@
+@mixin no-hover {
+    --h: 1.2em;   
+  
+    line-height: var(--h);
+    color: #0000;
+    text-shadow: 
+      0 calc(-1*var(--_t,0em)) #cccccc, 
+      0 calc(var(--h) - var(--_t,0em)) #f2f2f2;
+    overflow: hidden;
+    transition: .3s;
+}
+
+@mixin hover {
+    --_t: var(--h);
+}

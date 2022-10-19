@@ -1,0 +1,150 @@
+@import './colors';
+@import './mixins';
+@import './fonts';
+@import './effects';
+
+.navbar-all {
+    position: sticky;
+    top: 0;
+    font-family: $font-roboto;
+    z-index: 20;
+    background-color: $background-color;
+    margin-left: -3rem;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}
+
+.navbar-right {
+    list-style: none;
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    word-spacing: 1rem;
+    @include no-hover;
+}
+
+.navbar-right a {
+    margin-left: 3rem;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--font-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    @include no-hover;
+}
+
+.navbar-right a:hover {
+    @include hover;
+}
+
+.navbar-menu {
+    margin-right: 2rem;
+    margin-left: auto;
+    display: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-menu-close {
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--font-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: var(--text-shadow-light);
+    transition: var(--transition);
+    transition-delay: var(--transition-delay);
+    @include no-hover;
+}
+
+.navbar-menu-close:hover {
+    @include hover;
+}
+
+
+.navbar-menu-lines {
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--font-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: var(--text-shadow-light);
+    transition: var(--transition);
+    transition-delay: var(--transition-delay);
+    @include no-hover;
+}
+
+.navbar-menu-lines:hover {
+    @include hover;
+}
+
+
+
+.navbar-menu_container-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: end;
+    position: absolute;
+    right: 0;
+    min-width: 210px;
+    margin-bottom: 1rem;
+}
+
+.navbar-menu_container p {
+    margin: 1rem 0;
+    @include no-hover;
+}
+
+.navbar-menu_container a {
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 1rem;
+    @include no-hover;
+    background-color: $background-color;
+    padding: 3px;
+    box-shadow: 0 0 7px 6px $background-color;
+}
+
+.navbar-menu_container a:hover {
+    @include hover;
+}
+
+.navbar-menu_container p {
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 744px) {
+
+    .navbar-right {
+        display: none;
+    }
+
+    .navbar-menu {
+        display: block;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .navbar-menu_container a {
+        font-size: 16px;
+    }
+
+}
+
+

@@ -1,0 +1,99 @@
+@import './colors';
+@import './mixins';
+@import './fonts';
+@import './effects';
+
+.shows-all {
+    height: 78vh;
+    font-family: $font-roboto;
+    background: $background-color;
+}
+
+.shows-home {
+    z-index: 1;
+    background-color: $background-color;
+}
+
+.shows-main {
+    color: $main-color;
+    padding-top: 7rem;
+}
+
+.shows-main table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.shows-main tr td {
+    text-align: left;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 3rem;
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 1rem;
+    padding-right: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.shows-home a {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1rem;
+    z-index: 99;
+    cursor: pointer;
+    padding-right: 15px;
+    font-size: 35px;
+    font-family: $font-roboto;
+    font-weight: 300;
+    text-decoration: none;
+    color: $main-color;
+    @include no-hover;
+}
+
+.shows-home a:hover {
+    @include hover;
+}
+
+@media screen and (max-width: 744px) {
+
+
+}
+
+@media screen and (max-width: 550px) {
+
+    .shows-main {
+        color: $main-color;
+        padding-top: 5rem;
+    }
+    
+    .shows-main table {
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    
+    .shows-main tr td {
+        text-align: center;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1rem;
+        padding: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    
+}
+
+@media screen and (max-height: 450px) {
+
+    .shows-main {
+        padding-top: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

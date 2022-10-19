@@ -1,0 +1,12 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin transition {
+    transition: 1s;
+}
+
+@mixin transition-delay {
+    transition-delay: 0s;
+}

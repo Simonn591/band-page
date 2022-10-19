@@ -1,0 +1,175 @@
+@import './colors';
+@import './mixins';
+@import './fonts';
+@import './effects';
+
+.footer-all {
+    font-family: $font-roboto;
+    background: $background-color;
+    height: 85vh;
+}
+
+.footer-title {
+    text-align: center;
+    font-size: 40px;
+    color: $main-color;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 2rem;
+
+}
+
+.links-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.links-container img {
+    height: 50px;
+    margin: 6rem 3rem 0 3rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.links-container img:hover {
+filter: brightness(130%);
+transition: 0.5s;
+}
+
+.links-presskit {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+}
+
+.links-presskit button{
+    height: 70px;
+    width: 150px;
+    border: none;
+    color: $background-color;
+    background-color: $main-color;
+    cursor: pointer;
+    transition: 0.5s;
+
+    font-family: $font-roboto;
+    font-weight: 300;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.links-presskit button:hover{
+    background-color: $secondary-color;
+    transition: 0.5s;
+}
+
+
+@media screen and (max-width: 850px) {
+
+    .footer-title {
+        font-size: 30px;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .links-container img {
+        margin: 4rem 1rem 0 2rem;
+        height: 35px;
+    }
+
+    .links-presskit {
+        margin-top: 5rem;
+    }
+
+    .links-presskit button{
+        height: 50px;
+        width: 130px;
+        font-weight: 300;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+}
+
+/*
+@media screen and (max-width: 744px) {
+
+    .footer-title {
+        font-size: 26px;
+        text-align: left;
+        margin-left: 2rem;
+    }
+
+    .links-container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: left;
+    }
+
+    .links-container img {
+        height: 40px;
+        margin: 3rem 2rem 0 2rem;
+    }
+
+    .links-presskit {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: left;
+        margin-left: 2rem;
+    }
+*/
+    @media screen and (max-width: 400px) {
+
+        .footer-title {
+            font-size: 20px;
+        }
+    
+        .links-container {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+    
+        .links-container img {
+            height: 30px;
+            margin: 2rem 2rem 0 2rem;
+        }
+    
+        .links-presskit {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3rem;
+        }
+
+        .links-presskit button {
+            font-size: 16px;
+        }
+    }
+
+
+    @media screen and (max-height: 450px) {
+
+        .footer-all {
+            height: 80vh;
+        }
+        
+        .links-presskit {
+            margin-top: 2.5rem;
+        }
+
+        .links-container img {
+            margin: 3rem 1rem 0 2rem;
+            height: 40px;
+        }
+    }

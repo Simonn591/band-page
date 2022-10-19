@@ -1,0 +1,94 @@
+@import './colors';
+@import './mixins';
+@import './fonts';
+@import './effects';
+
+.album-all {
+    text-align: center;
+    justify-content: center;
+}
+
+.album-cover {
+    height: 250px;
+    width: 250px;
+    margin-bottom: 1rem;
+}
+
+.album-title {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.album-title p {
+    margin-bottom: -1rem;
+}
+
+.album-year {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.album-year p {
+    margin-bottom: -1rem;
+}
+
+.album-spotify img {
+    height: 40px;
+    margin: 1rem;
+    transition: 0.5s;
+}
+
+.album-spotify img:hover {
+    filter: brightness(130%);
+    transition: 0.5s;
+}
+ 
+.album-bandcamp img {
+    height: 40px;
+    margin: 1rem;
+    transition: 0.5s;
+}
+
+.album-bandcamp img:hover {
+    filter: brightness(130%);
+    transition: 0.5s;
+}
+
+.album-youtube img {
+    height: 40px;
+    margin: 1rem;
+    transition: 0.5s;
+}
+
+.album-youtube img:hover {
+    filter: brightness(130%);
+    transition: 0.5s;
+}
+
+
+@media screen and (max-width: 400px) {
+    
+    .album-title {
+        font-size: 16px;
+    }
+
+    .album-year {
+        font-size: 14px;
+    }
+
+    .album-spotify img {
+        height: 30px;
+
+    }
+     
+    .album-bandcamp img {
+        height: 30px;
+
+    }
+
+    .album-youtube img {
+        height: 30px;
+
+    }
+
+}

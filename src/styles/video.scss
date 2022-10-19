@@ -1,0 +1,56 @@
+@import './colors';
+@import './mixins';
+@import './fonts';
+@import './effects';
+
+.video-all {
+    height: 78vh;
+    font-family: $font-roboto;
+    background: $background-color;
+}
+
+.video-home {
+    z-index: 1;
+    background-color: $background-color;
+}
+
+.video-home a {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1rem;
+    z-index: 99;
+    cursor: pointer;
+    padding-right: 15px;
+    font-size: 35px;
+    font-family: $font-roboto;
+    font-weight: 300;
+    text-decoration: none;
+    color: $main-color;
+    @include no-hover;
+}
+
+.video-home a:hover {
+    @include hover;
+}
+
+.video-yt {
+
+    overflow: hidden;
+    padding-bottom: 75vh;
+    position: relative;
+    height: 0;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+
+@media screen and (max-width: 744px) {
+
+    
+}
