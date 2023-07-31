@@ -19,5 +19,5 @@ ReactDOM.render(
     </Routes>
   </Router>,
 
-  document.getElementById("root")
+  document.getElementById("root"),
 );

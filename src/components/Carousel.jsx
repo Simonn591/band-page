@@ -9,7 +9,7 @@ export default function Carousel() {
   return (
     <div className="carousel-all">
       <HeroSlider
-        height={"78vh"}
+        height="78vh"
         autoplay={{
           autoplayDuration: 5000,
         }}
@@ -27,7 +27,7 @@ export default function Carousel() {
             console.debug(
               "onBeforeSliding(previousSlide, nextSlide): ",
               previousSlide,
-              nextSlide
+              nextSlide,
             ),
           onAfterSliding: (nextSlide) =>
             console.debug("onAfterSliding(nextSlide): ", nextSlide),

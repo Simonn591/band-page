@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
       <div className="links-presskit">
         <a href="https://github.com/Simonn591" target="_blank" rel="noreferrer">
-          <button onclick="window.location.href='https://w3docs.com';">
+          <button onClick="window.location.href='https://w3docs.com';">
             Presskit
           </button>
         </a>
