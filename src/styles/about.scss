@@ -1,104 +1,99 @@
-@import './colors';
-@import './mixins';
-@import './fonts';
-@import './effects';
-
+@import "./colors";
+@import "./mixins";
+@import "./fonts";
+@import "./effects";
 
 .about-all {
-    height: 78vh;
-    font-family: $font-roboto;
-    background: $background-color;
+  height: 78vh;
+  font-family: $font-roboto;
+  background: $background-color;
 }
 
 .about-home {
-    z-index: 1;
-    background-color: $background-color;
+  z-index: 1;
+  background-color: $background-color;
 }
 
 .about-home a {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1rem;
-    z-index: 99;
-    cursor: pointer;
-    padding-right: 15px;
-    font-size: 35px;
-    font-family: $font-roboto;
-    font-weight: 300;
-    text-decoration: none;
-    color: $main-color;
-    @include no-hover;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1rem;
+  z-index: 99;
+  cursor: pointer;
+  padding-right: 15px;
+  font-size: 35px;
+  font-family: $font-roboto;
+  font-weight: 300;
+  text-decoration: none;
+  color: $main-color;
+  @include no-hover;
 }
 
 .about-home a:hover {
-    @include hover;
+  @include hover;
 }
 
 .about-main {
-    color: $main-color;
-    margin: auto;
-    padding-top: 7rem;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 650px;
-    height: 200px;
+  color: $main-color;
+  margin: auto;
+  padding-top: 7rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 650px;
+  height: 200px;
 }
 
 .about-main p {
-    text-align: center;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 2rem;
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 2rem;
 }
 
 .about-main p span {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 744px) {
+  .about-main {
+    padding-top: 4rem;
+    width: 350px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .about-main {
-        padding-top: 4rem;
-        width: 350px;
-        height: 200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .about-main p {
-        text-align: center;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 2rem;
-    }
+  .about-main p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 2rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  .about-main {
+    padding-top: 4rem;
+    width: 300px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-
-    .about-main {
-        padding-top: 4rem;
-        width: 300px;
-        height: 200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .about-main p {
-        text-align: center;
-        font-weight: 300;
-        font-size: 14px;
-        line-height: 2rem;
-    }
+  .about-main p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 2rem;
+  }
 }
 
 @media screen and (max-height: 450px) {
-
-    .about-main {
-        padding-top: 2rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .about-main {
+    padding-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

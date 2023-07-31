@@ -1,22 +1,21 @@
-@import './colors';
-@import './fonts';
+@import "./colors";
+@import "./fonts";
 
 .copyright-all {
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: $font-roboto;
-    font-weight: 300;
-    color: $main-color;
-    font-size: 16px;
-    background-color: $background-color;
-    letter-spacing: 1px;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-roboto;
+  font-weight: 300;
+  color: $main-color;
+  font-size: 16px;
+  background-color: $background-color;
+  letter-spacing: 1px;
 }
 
 @media screen and (max-width: 400px) {
-
-    .copyright-all {
-        font-size: 14px;
-    }
+  .copyright-all {
+    font-size: 14px;
+  }
 }

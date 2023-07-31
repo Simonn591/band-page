@@ -1,13 +1,13 @@
-@import './styles/colors';
+@import "./styles/colors";
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    /*color-scheme: dark;*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  /*color-scheme: dark;*/
 }
 
-.App{
-    background: $background-color;
+.App {
+  background: $background-color;
 }
