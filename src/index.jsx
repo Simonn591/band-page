@@ -1,14 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import Music from "./components/Music";
 import Video from "./components/Video";
 import Shows from "./components/Shows";
-
 import App from "./App";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <Router>
     <Routes>
       <Route path="/" element={<App />} />
