@@ -27,7 +27,7 @@ export default function Carousel() {
             console.debug(
               "onBeforeSliding(previousSlide, nextSlide): ",
               previousSlide,
-              nextSlide,
+              nextSlide
             ),
           onAfterSliding: (nextSlide) =>
             console.debug("onAfterSliding(nextSlide): ", nextSlide),
