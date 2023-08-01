@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/album.scss";
+import PropTypes from "prop-types";
 
 import bandcamp from "../assets/bandcamp.png";
 import youtube from "../assets/youtube.png";
@@ -36,3 +37,14 @@ export default function Album(props) {
     </div>
   );
 }
+
+Album.propTypes = {
+  item: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    spotify: PropTypes.string.isRequired,
+    youtube: PropTypes.string.isRequired,
+    bandcamp: PropTypes.string.isRequired,
+  }).isRequired,
+};

@@ -12,6 +12,7 @@ const Music = () => {
   const projects = album.map((item) => {
     return (
       <Album
+        key={item.id}
         item={item}
         id={item.id}
         title={item.title}
