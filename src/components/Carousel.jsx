@@ -27,6 +27,7 @@ export default function Carousel() {
             console.debug(
               "onBeforeSliding(previousSlide, nextSlide): ",
               previousSlide,
+              // eslint-disable-next-line prettier/prettier
               nextSlide
             ),
           onAfterSliding: (nextSlide) =>
