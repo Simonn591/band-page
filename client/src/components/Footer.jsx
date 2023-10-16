@@ -6,10 +6,12 @@ import instagram from "../assets/instagram.png";
 import facebook from "../assets/facebook.png";
 import youtube from "../assets/youtube.png";
 
-const Footer = () => {
+/* eslint-disable react/prop-types */
+
+const Footer = ({ item }) => {
   return (
     <section className="footer-all" id="footer">
-      <h1 className="footer-title">Středisko opilých básníků</h1>
+      <h1 className="footer-title">{item.attributes.header}</h1>
       <div className="links-container">
         <div className="links-mail">
           <a href="mailto:simon.marchal2@gmail.com">
