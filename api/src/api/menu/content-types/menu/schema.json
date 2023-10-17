@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "menu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label1": {
+      "type": "string"
+    },
+    "label2": {
+      "type": "string"
+    },
+    "label3": {
+      "type": "string"
+    },
+    "label4": {
+      "type": "string"
+    },
+    "label5": {
+      "type": "string"
+    }
+  }
+}
