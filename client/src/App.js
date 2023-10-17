@@ -18,7 +18,7 @@ const App = () => {
             headers: {
               authorization: "Bearer " + process.env.REACT_APP_API_TOKEN,
             },
-          } /* eslint-disable-next-line prettier/prettier */
+          },
         );
         setData(res.data.data);
       } catch (err) {
@@ -34,8 +34,8 @@ const App = () => {
         {data.map((item) => (
           <div key={item.id}>
             <Navbar item={item} />
-            <Footer item={item} />
             <Carousel item={item} />
+            <Footer item={item} />
             <Copyright item={item} />
           </div>
         ))}
