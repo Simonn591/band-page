@@ -386,6 +386,8 @@ export interface ApiFooterFooter extends Schema.CollectionType {
     facebookIcon: Attribute.Media;
     bandcampIcon: Attribute.Media;
     youtubeIcon: Attribute.Media;
+    presskitLink: Attribute.String;
+    presskitButton: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

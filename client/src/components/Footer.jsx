@@ -1,10 +1,5 @@
 import React from "react";
 import "../styles/footer.scss";
-import mail from "../assets/mail.png";
-import bandcamp from "../assets/bandcamp.png";
-import instagram from "../assets/instagram.png";
-import facebook from "../assets/facebook.png";
-import youtube from "../assets/youtube.png";
 
 /* eslint-disable react/prop-types */
 
@@ -12,59 +7,94 @@ const Footer = ({ item }) => {
   return (
     <section className="footer-all" id="footer">
       <h1 className="footer-title">{item.attributes.header}</h1>
-      <div className="links-container">
-        <div className="links-mail">
-          <a href="mailto:simon.marchal2@gmail.com">
-            <img className="links-mail-img" src={mail} alt="mail" />
-          </a>
+      <div className="footer-content">
+        <div className="links-container">
+          <div className="links-mail">
+            <a href={item.attributes.mailLink} target="_blank" rel="noreferrer">
+              <img
+                className="links-mail-img"
+                src={
+                  process.env.REACT_APP_UPLOAD_URL +
+                  item.attributes.mailIcon.data.attributes.url
+                }
+                alt="mail"
+              />
+            </a>
+          </div>
+          <div className="links-instagram">
+            <a
+              href={item.attributes.instagramLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="links-instagram-img"
+                src={
+                  process.env.REACT_APP_UPLOAD_URL +
+                  item.attributes.instagramIcon.data.attributes.url
+                }
+                alt="instagram"
+              />
+            </a>
+          </div>
+          <div className="links-facebook">
+            <a
+              href={item.attributes.facebookLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="links-facebook-img"
+                src={
+                  process.env.REACT_APP_UPLOAD_URL +
+                  item.attributes.facebookIcon.data.attributes.url
+                }
+                alt="facebook"
+              />
+            </a>
+          </div>
+          <div className="links-bandcamp">
+            <a
+              href={item.attributes.bandcampLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="links-bandcamp-img"
+                src={
+                  process.env.REACT_APP_UPLOAD_URL +
+                  item.attributes.bandcampIcon.data.attributes.url
+                }
+                alt="bandcamp"
+              />
+            </a>
+          </div>
+          <div className="links-youtube">
+            <a
+              href={item.attributes.youtubeLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="links-youtube-img"
+                src={
+                  process.env.REACT_APP_UPLOAD_URL +
+                  item.attributes.youtubeIcon.data.attributes.url
+                }
+                alt="youtube"
+              />
+            </a>
+          </div>
         </div>
-        <div className="links-instagram">
+        <div className="links-presskit">
           <a
-            href="https://www.linkedin.com/in/%C5%A1imon-marchal-441690144"
+            href={item.attributes.presskitLink}
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              className="links-instagram-img"
-              src={instagram}
-              alt="instagram"
-            />
+            <button>{item.attributes.presskitButton}</button>
           </a>
         </div>
-        <div className="links-facebook">
-          <a
-            href="https://github.com/Simonn591"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img className="links-facebook-img" src={facebook} alt="facebook" />
-          </a>
-        </div>
-        <div className="links-bandcamp">
-          <a
-            href="https://github.com/Simonn591"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img className="links-bandcamp-img" src={bandcamp} alt="bandcamp" />
-          </a>
-        </div>
-        <div className="links-youtube">
-          <a
-            href="https://github.com/Simonn591"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img className="links-youtube-img" src={youtube} alt="youtube" />
-          </a>
-        </div>
-      </div>
-      <div className="links-presskit">
-        <a href="https://github.com/Simonn591" target="_blank" rel="noreferrer">
-          <button onClick="window.location.href='https://w3docs.com';">
-            Presskit
-          </button>
-        </a>
       </div>
     </section>
   );
