@@ -677,6 +677,28 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBandBand extends Schema.CollectionType {
+  collectionName: 'bands';
+  info: {
+    singularName: 'band';
+    pluralName: 'bands';
+    displayName: 'band';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    about: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::band.band', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::band.band', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.CollectionType {
   collectionName: 'footers';
   info: {
@@ -763,6 +785,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::band.band': ApiBandBand;
       'api::footer.footer': ApiFooterFooter;
       'api::menu.menu': ApiMenuMenu;
     }
