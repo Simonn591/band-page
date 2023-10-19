@@ -725,6 +725,7 @@ export interface ApiFooterFooter extends Schema.CollectionType {
     youtubeIcon: Attribute.Media;
     presskitLink: Attribute.String;
     presskitButton: Attribute.String;
+    copyright: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

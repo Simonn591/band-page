@@ -78,6 +78,9 @@
     },
     "presskitButton": {
       "type": "string"
+    },
+    "copyright": {
+      "type": "string"
     }
   }
 }
