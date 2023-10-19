@@ -1,19 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/navbar.scss";
 import { Link } from "react-router-dom";
-
-const Menu = () => (
-  <>
-    <Link to="/about">Kapela</Link>
-    <Link to="/music">Hudba</Link>
-    <Link to="/video">Video</Link>
-    <Link to="/shows">Koncerty</Link>
-    <a href="#footer">Kontakt</a>
-  </>
-);
+import axios from "axios";
 
 const Navbar = () => {
+  const [data, setData] = useState([]);
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          process.env.REACT_APP_API_URL + "/menus?populate=*",
+          {
+            headers: {
+              authorization: "Bearer " + process.env.REACT_APP_API_TOKEN,
+            },
+          },
+        );
+        setData(res.data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const Menu = () => (
+    <>
+      {data.map((item) => (
+        <div key={item.id}>
+          <Link to="/about">{item.attributes.label1}</Link>
+          <Link to="/music">{item.attributes.label2}</Link>
+          <Link to="/video">{item.attributes.label3}</Link>
+          <Link to="/shows">{item.attributes.label4}</Link>
+          <a href="#footer">{item.attributes.label5}</a>
+        </div>
+      ))}
+    </>
+  );
 
   return (
     <div className="navbar-all" id="navbar">
