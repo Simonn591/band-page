@@ -677,6 +677,45 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAlbumAlbum extends Schema.CollectionType {
+  collectionName: 'albums';
+  info: {
+    singularName: 'album';
+    pluralName: 'albums';
+    displayName: 'album';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover: Attribute.Media;
+    title: Attribute.String;
+    year: Attribute.Integer;
+    spotify: Attribute.Media;
+    spotifyLink: Attribute.String;
+    youtube: Attribute.Media;
+    youtubeLink: Attribute.String;
+    bandcamp: Attribute.Media;
+    bandcampLink: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::album.album',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::album.album',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBandBand extends Schema.CollectionType {
   collectionName: 'bands';
   info: {
@@ -786,6 +825,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::album.album': ApiAlbumAlbum;
       'api::band.band': ApiBandBand;
       'api::footer.footer': ApiFooterFooter;
       'api::menu.menu': ApiMenuMenu;

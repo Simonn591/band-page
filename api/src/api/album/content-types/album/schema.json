@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "albums",
+  "info": {
+    "singularName": "album",
+    "pluralName": "albums",
+    "displayName": "album",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "spotify": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "spotifyLink": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "youtubeLink": {
+      "type": "string"
+    },
+    "bandcamp": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bandcampLink": {
+      "type": "string"
+    }
+  }
+}

@@ -1,50 +1,97 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../styles/album.scss";
-import PropTypes from "prop-types";
 
-// import bandcamp from "../assets/bandcamp.png";
-// import youtube from "../assets/youtube.png";
-// import spotify from "../assets/spotify.png";
+export default function Album() {
+  const [data, setData] = useState([]);
 
-export default function Album(props) {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          process.env.REACT_APP_API_URL + "/albums?populate=*",
+          {
+            headers: {
+              authorization: "Bearer " + process.env.REACT_APP_API_TOKEN,
+            },
+          },
+        );
+        setData(res.data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="album-all">
-      <img className="album-cover" src={props.item.img} alt="cover" />
-      <br></br>
-      <span className="album-title">
-        <p>{props.item.title}</p>
-      </span>
-      <br></br>
-      <span className="album-year">
-        <p>{props.item.year}</p>
-      </span>
-      <br></br>
-      <span className="album-spotify">
-        <a href={props.item.spotify} target="_blank" rel="noreferrer">
-          {/*  <img src={spotify} alt="spotify" /> */}
-        </a>
-      </span>
-      <span className="album-youtube">
-        <a href={props.item.youtube} target="_blank" rel="noreferrer">
-          {/*  <img src={youtube} alt="youtube" /> */}
-        </a>
-      </span>
-      <span className="album-bandcamp">
-        <a href={props.item.bandcamp} target="_blank" rel="noreferrer">
-          {/* <img src={bandcamp} alt="bandcamp" /> */}
-        </a>
-      </span>
+      {data.map((item) => (
+        <div key={item.id}>
+          <img
+            className="album-cover"
+            src={
+              process.env.REACT_APP_UPLOAD_URL +
+              item.attributes.cover.data.attributes.url
+            }
+            alt="cover"
+          />
+          <br></br>
+          <span className="album-title">
+            <p>{item.attributes.title}</p>
+          </span>
+          <br></br>
+          <span className="album-year">
+            <p>{item.attributes.year}</p>
+          </span>
+          <br></br>
+          <span className="album-spotify">
+            <a
+              href={item.attributes.spotifyLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={
+                  process.env.REACT_APP_UPLOAD_URL +
+                  item.attributes.spotify.data.attributes.url
+                }
+                alt="spotify"
+              />
+            </a>
+          </span>
+          <span className="album-youtube">
+            <a
+              href={item.attributes.youtubeLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={
+                  process.env.REACT_APP_UPLOAD_URL +
+                  item.attributes.youtube.data.attributes.url
+                }
+                alt="youtube"
+              />
+            </a>
+          </span>
+          <span className="album-bandcamp">
+            <a
+              href={item.attributes.bandcampLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={
+                  process.env.REACT_APP_UPLOAD_URL +
+                  item.attributes.bandcamp.data.attributes.url
+                }
+                alt="bandcamp"
+              />
+            </a>
+          </span>
+        </div>
+      ))}
     </div>
   );
 }
-
-Album.propTypes = {
-  item: PropTypes.shape({
-    img: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired,
-    spotify: PropTypes.string.isRequired,
-    youtube: PropTypes.string.isRequired,
-    bandcamp: PropTypes.string.isRequired,
-  }).isRequired,
-};
