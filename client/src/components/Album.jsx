@@ -1,29 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import "../styles/album.scss";
 
-export default function Album() {
-  const [data, setData] = useState([]);
+// Album.jsx
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(
-          process.env.REACT_APP_API_URL + "/albums?populate=*",
-          {
-            headers: {
-              authorization: "Bearer " + process.env.REACT_APP_API_TOKEN,
-            },
-          },
-        );
-        setData(res.data.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, []);
+import PropTypes from "prop-types";
 
+const Album = ({ data }) => {
   return (
     <div className="album-all">
       {data.map((item) => (
@@ -36,15 +18,15 @@ export default function Album() {
             }
             alt="cover"
           />
-          <br></br>
+          <br />
           <span className="album-title">
             <p>{item.attributes.title}</p>
           </span>
-          <br></br>
+          <br />
           <span className="album-year">
             <p>{item.attributes.year}</p>
           </span>
-          <br></br>
+          <br />
           <span className="album-spotify">
             <a
               href={item.attributes.spotifyLink}
@@ -94,4 +76,10 @@ export default function Album() {
       ))}
     </div>
   );
-}
+};
+
+Album.propTypes = {
+  data: PropTypes.array.isRequired,
+};
+
+export default Album;

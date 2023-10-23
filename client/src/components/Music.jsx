@@ -1,29 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import "../styles/music.scss";
 import Copyright from "./Copyright";
-
-import { album } from "../data";
+import axios from "axios";
 import Album from "./Album";
 
 const Music = () => {
-  const projects = album.map((item) => {
-    return (
-      <Album
-        key={item.id}
-        item={item}
-        id={item.id}
-        title={item.title}
-        img={item.img}
-        year={item.year}
-        spotify={item.spotify}
-        youtube={item.youtube}
-        bandcamp={item.bandcamp}
-      />
-    );
-  });
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_URL}/albums?populate=*`,
+          {
+            headers: {
+              authorization: "Bearer " + process.env.REACT_APP_API_TOKEN,
+            },
+          },
+        );
+        setProjects(res.data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -34,7 +38,7 @@ const Music = () => {
       <Navbar />
       <div className="music-all">
         <div className="music-main">
-          <div className="music-albums">{projects}</div>
+          <Album data={projects} />
           <div className="music-home">
             <a
               onClick={() => {
