@@ -20,6 +20,4 @@ root.render(
       <Route path="/shows" element={<Shows />} />
     </Routes>
   </Router>,
-
-  document.getElementById("root"),
 );
