@@ -8,7 +8,7 @@ import axios from "axios";
 import Album from "./Album";
 
 const Music = () => {
-  const [projects, setProjects] = useState([]);
+  const [album, setAlbum] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,7 @@ const Music = () => {
             },
           },
         );
-        setProjects(res.data.data);
+        setAlbum(res.data.data);
       } catch (err) {
         console.log(err);
       }
@@ -38,7 +38,7 @@ const Music = () => {
       <Navbar />
       <div className="music-all">
         <div className="music-main">
-          <Album data={projects} />
+          <Album data={album} />
           <div className="music-home">
             <a
               onClick={() => {
