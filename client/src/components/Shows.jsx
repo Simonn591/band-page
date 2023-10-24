@@ -15,20 +15,7 @@ const Shows = () => {
       <Navbar />
       <div className="shows-all">
         <div className="shows-main">
-          <table className="shows-table">
-            <tr>
-              <td>Klubovna</td>
-              <td>25.10.2022</td>
-            </tr>
-            <tr>
-              <td>U Vystřelenýho oka</td>
-              <td>3.12.2022</td>
-            </tr>
-            <tr>
-              <td>O2 Arena</td>
-              <td>10.2.2033</td>
-            </tr>
-          </table>
+          TODO
           <div className="shows-home">
             <a
               onClick={() => {
