@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // import the styles
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import axios from "axios";
 
 export default function MyCarousel() {
@@ -36,9 +36,13 @@ export default function MyCarousel() {
         autoPlay
         infiniteLoop
         interval={5000}
+        animationHandler="fade"
         showThumbs={false}
         showArrows={false}
         showStatus={false}
+        showIndicators={false}
+        swipeable={false}
+        style={{ height: "78vh" }}
       >
         {data.map((item) => (
           <div key={item.id}>
