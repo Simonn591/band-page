@@ -16,7 +16,8 @@ const Navbar = () => {
             headers: {
               authorization: "Bearer " + process.env.REACT_APP_API_TOKEN,
             },
-          },
+            // eslint-disable-next-line prettier/prettier
+          }
         );
         setData(res.data.data);
       } catch (err) {

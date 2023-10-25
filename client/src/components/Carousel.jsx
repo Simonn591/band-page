@@ -15,7 +15,8 @@ export default function MyCarousel() {
             headers: {
               authorization: "Bearer " + process.env.REACT_APP_API_TOKEN,
             },
-          },
+            // eslint-disable-next-line prettier/prettier
+          }
         );
         setData(res.data.data);
       } catch (err) {
@@ -26,7 +27,6 @@ export default function MyCarousel() {
   }, []);
 
   if (!data.length) {
-    // No data yet, you can render a loading state or return null
     return null;
   }
 
